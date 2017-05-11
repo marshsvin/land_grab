@@ -18,7 +18,7 @@
 
       <% @property_bookings.each do |property_booking| %>
       <tr>
-        <td><%= property_booking.property_id %></td>
+        <td><%= property_booking.property.landowner_id %></td>
         <td><%= property_booking.booking_start_date %></td>
         <td><%= property_booking.booking_end_date %></td>
         <td><%= property_booking.bookers_id %></td>
