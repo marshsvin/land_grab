@@ -23,3 +23,96 @@
     </div>
   </div>
 </div>
+
+<!-- A User type has many property_infos -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Property Infos
+      </li>
+
+      <% @user_type.property_infos.each do |property_info| %>
+        <li class="list-group-item">
+          <a href="/property_infos/<%= property_info.id %>">
+            <%= property_info.landowner_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/property_infos/<%= property_info.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/property_infos/<%= property_info.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_property_info/<%= property_info.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User type has many property_bookings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Property Bookings
+      </li>
+
+      <% @user_type.property_bookings.each do |property_booking| %>
+        <li class="list-group-item">
+          <a href="/property_bookings/<%= property_booking.id %>">
+            <%= property_booking.property_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/property_bookings/<%= property_booking.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/property_bookings/<%= property_booking.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_property_booking/<%= property_booking.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User type has many property_reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Property Reviews
+      </li>
+
+      <% @user_type.property_reviews.each do |property_review| %>
+        <li class="list-group-item">
+          <a href="/property_reviews/<%= property_review.id %>">
+            <%= property_review.property_review %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/property_reviews/<%= property_review.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/property_reviews/<%= property_review.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_property_review/<%= property_review.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -44,3 +44,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Property info has many property_bookings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Property Bookings
+      </li>
+
+      <% @property_info.property_bookings.each do |property_booking| %>
+        <li class="list-group-item">
+          <a href="/property_bookings/<%= property_booking.id %>">
+            <%= property_booking.property_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/property_bookings/<%= property_booking.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/property_bookings/<%= property_booking.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_property_booking/<%= property_booking.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Property info has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @property_info.reviews.each do |property_review| %>
+        <li class="list-group-item">
+          <a href="/property_reviews/<%= property_review.id %>">
+            <%= property_review.property_review %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/property_reviews/<%= property_review.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/property_reviews/<%= property_review.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_property_review/<%= property_review.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
