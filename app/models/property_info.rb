@@ -1,6 +1,10 @@
 class PropertyInfo < ApplicationRecord
   # Direct associations
 
+  has_many   :reviews,
+             :class_name => "PropertyReview",
+             :foreign_key => "property_id"
+
   has_many   :property_bookings,
              :foreign_key => "property_id"
 
