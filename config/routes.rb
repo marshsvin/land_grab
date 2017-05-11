@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "property_infos#index"
   # Routes for the User_review resource:
   # CREATE
   get "/user_reviews/new", :controller => "user_reviews", :action => "new"
