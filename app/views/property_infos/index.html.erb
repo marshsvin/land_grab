@@ -22,7 +22,13 @@
 
       <% @property_infos.each do |property_info| %>
       <tr>
-        <td><%= property_info.landowner.id %></td>
+        <td>
+          <% if property_info.landowner.present? %>
+            <a href="/user_types/<%= property_info.landowner.id %>">
+              <%= property_info.landowner.id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= property_info.property_address %></td>
         <td><%= property_info.property_zip_code %></td>
         <td><%= property_info.property_city %></td>

@@ -18,8 +18,20 @@
       <% @property_reviews.each do |property_review| %>
       <tr>
         <td><%= property_review.property_review %></td>
-        <td><%= property_review.property.landowner_id %></td>
-        <td><%= property_review.user.id %></td>
+        <td>
+          <% if property_review.property.present? %>
+            <a href="/property_infos/<%= property_review.property.id %>">
+              <%= property_review.property.landowner_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if property_review.user.present? %>
+            <a href="/user_types/<%= property_review.user.id %>">
+              <%= property_review.user.id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/property_reviews/<%= property_review.id %>" class="btn btn-primary">Show</a>
           

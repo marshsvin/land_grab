@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Property</dt>
-      <dd><%= @property_booking.property_id %></dd>
+      <dd>
+        <% if @property_booking.property.present? %>
+          <a href="/property_infos/<%= @property_booking.property_id %>">
+            <%= @property_booking.property.landowner_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Booking start date</dt>
       <dd><%= @property_booking.booking_start_date %></dd>
@@ -15,7 +21,13 @@
       <dd><%= @property_booking.booking_end_date %></dd>
 
       <dt>Bookers</dt>
-      <dd><%= @property_booking.bookers_id %></dd>
+      <dd>
+        <% if @property_booking.bookers.present? %>
+          <a href="/user_types/<%= @property_booking.bookers_id %>">
+            <%= @property_booking.bookers.id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

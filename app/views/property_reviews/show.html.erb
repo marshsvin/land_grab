@@ -9,10 +9,22 @@
       <dd><%= @property_review.property_review %></dd>
 
       <dt>Property</dt>
-      <dd><%= @property_review.property_id %></dd>
+      <dd>
+        <% if @property_review.property.present? %>
+          <a href="/property_infos/<%= @property_review.property_id %>">
+            <%= @property_review.property.landowner_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User</dt>
-      <dd><%= @property_review.user_id %></dd>
+      <dd>
+        <% if @property_review.user.present? %>
+          <a href="/user_types/<%= @property_review.user_id %>">
+            <%= @property_review.user.id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

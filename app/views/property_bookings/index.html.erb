@@ -18,10 +18,22 @@
 
       <% @property_bookings.each do |property_booking| %>
       <tr>
-        <td><%= property_booking.property.landowner_id %></td>
+        <td>
+          <% if property_booking.property.present? %>
+            <a href="/property_infos/<%= property_booking.property.id %>">
+              <%= property_booking.property.landowner_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= property_booking.booking_start_date %></td>
         <td><%= property_booking.booking_end_date %></td>
-        <td><%= property_booking.bookers.id %></td>
+        <td>
+          <% if property_booking.bookers.present? %>
+            <a href="/user_types/<%= property_booking.bookers.id %>">
+              <%= property_booking.bookers.id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/property_bookings/<%= property_booking.id %>" class="btn btn-primary">Show</a>
           <a href="/property_bookings/<%= property_booking.id %>/edit" class="btn btn-warning">Edit</a>
