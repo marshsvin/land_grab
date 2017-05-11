@@ -11,6 +11,11 @@ class PropertyInfosController < ApplicationController
 
   def index
     @property_infos = PropertyInfo.all
+    @location_hash = Gmaps4rails.build_markers(@property_infos.where.not(:property_address_latitude => nil)) do |property_info, marker|
+      marker.lat property_info.property_address_latitude
+      marker.lng property_info.property_address_longitude
+      marker.infowindow "<h5><a href='/property_infos/#{property_info.id}'>#{property_info.landowner_id}</a></h5><small>#{property_info.property_address_formatted_address}</small>"
+    end
 
     render("property_infos/index.html.erb")
   end
