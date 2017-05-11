@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Property Info #<%= @property_info.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Landowner</dt>
+      <dd><%= @property_info.landowner_id %></dd>
+
+      <dt>Property address</dt>
+      <dd><%= @property_info.property_address %></dd>
+
+      <dt>Property zip code</dt>
+      <dd><%= @property_info.property_zip_code %></dd>
+
+      <dt>Property city</dt>
+      <dd><%= @property_info.property_city %></dd>
+
+      <dt>Property state</dt>
+      <dd><%= @property_info.property_state %></dd>
+
+      <dt>Property acreage</dt>
+      <dd><%= @property_info.property_acreage %></dd>
+
+      <dt>Property description</dt>
+      <dd><%= @property_info.property_description %></dd>
+
+      <dt>Property pictures</dt>
+      <dd><%= @property_info.property_pictures %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/property_infos" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/property_infos/<%= @property_info.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_property_info/<%= @property_info.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

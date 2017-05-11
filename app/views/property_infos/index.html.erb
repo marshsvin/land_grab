@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    Property infos
+    <a href="/property_infos/new" class="btn btn-lg btn-success">New Property info</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Landowner</th>
+        <th>Property address</th>
+        <th>Property zip code</th>
+        <th>Property city</th>
+        <th>Property state</th>
+        <th>Property acreage</th>
+        <th>Property description</th>
+        <th>Property pictures</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @property_infos.each do |property_info| %>
+      <tr>
+        <td><%= property_info.landowner_id %></td>
+        <td><%= property_info.property_address %></td>
+        <td><%= property_info.property_zip_code %></td>
+        <td><%= property_info.property_city %></td>
+        <td><%= property_info.property_state %></td>
+        <td><%= property_info.property_acreage %></td>
+        <td><%= property_info.property_description %></td>
+        <td><%= property_info.property_pictures %></td>
+        <td>
+          <a href="/property_infos/<%= property_info.id %>" class="btn btn-primary">Show</a>
+          <a href="/property_infos/<%= property_info.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_property_info/<%= property_info.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
