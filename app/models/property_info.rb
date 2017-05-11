@@ -1,4 +1,6 @@
 class PropertyInfo < ApplicationRecord
+  mount_uploader :property_pictures, PropertyPictureUploader
+
   # Direct associations
 
   has_many   :reviews,

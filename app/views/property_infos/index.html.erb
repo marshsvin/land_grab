@@ -29,7 +29,7 @@
         <td><%= property_info.property_state %></td>
         <td><%= property_info.property_acreage %></td>
         <td><%= property_info.property_description %></td>
-        <td><%= property_info.property_pictures %></td>
+        <td><img src='<%= property_info.property_pictures %>' class='img-responsive'></td>
         <td>
           <a href="/property_infos/<%= property_info.id %>" class="btn btn-primary">Show</a>
           <a href="/property_infos/<%= property_info.id %>/edit" class="btn btn-warning">Edit</a>
