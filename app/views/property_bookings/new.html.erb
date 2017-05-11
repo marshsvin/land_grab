@@ -51,7 +51,7 @@
           Bookers
         </label>
 
-        <input type="text" id="bookers_id" name="bookers_id" placeholder="Bookers" class="form-control" value="<%= @property_booking.bookers_id %>">
+        <%= select_tag(:bookers_id, options_from_collection_for_select(UserType.all, :id, :id, @property_booking.bookers_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
