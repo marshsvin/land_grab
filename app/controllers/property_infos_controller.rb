@@ -1,4 +1,14 @@
 class PropertyInfosController < ApplicationController
+  before_action :current_user_must_be_property_info_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_property_info_user_type
+    property_info = PropertyInfo.find(params[:id])
+
+    unless current_user == property_info.landowner
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @property_infos = PropertyInfo.all
 

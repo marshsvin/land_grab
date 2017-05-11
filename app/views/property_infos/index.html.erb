@@ -32,8 +32,11 @@
         <td><img src='<%= property_info.property_pictures %>' class='img-responsive'></td>
         <td>
           <a href="/property_infos/<%= property_info.id %>" class="btn btn-primary">Show</a>
-          <a href="/property_infos/<%= property_info.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_property_info/<%= property_info.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == property_info.landowner %>
+            <a href="/property_infos/<%= property_info.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_property_info/<%= property_info.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
