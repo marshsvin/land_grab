@@ -1,6 +1,9 @@
 class UserType < ApplicationRecord
   # Direct associations
 
+  has_many   :property_bookings,
+             :foreign_key => "bookers_id"
+
   has_many   :property_infos,
              :foreign_key => "landowner_id",
              :dependent => :nullify
