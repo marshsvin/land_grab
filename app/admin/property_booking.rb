@@ -1,5 +1,7 @@
 ActiveAdmin.register PropertyBooking do
 
+ permit_params :property_id, :booking_start_date, :booking_end_date, :bookers_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
