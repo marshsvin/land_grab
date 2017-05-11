@@ -74,6 +74,53 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_property_booking" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for property_id -->
+      <div class="form-group">
+        <label for="property_id" class="control-label">
+          Property
+        </label>
+
+        <%= select_tag(:property_id, options_from_collection_for_select(PropertyInfo.all, :id, :landowner_id), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for booking_start_date -->
+      <div class="form-group">
+        <label for="booking_start_date" class="control-label">
+          Booking start date
+        </label>
+
+        <input type="text" id="booking_start_date" name="booking_start_date" placeholder="Booking start date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for booking_end_date -->
+      <div class="form-group">
+        <label for="booking_end_date" class="control-label">
+          Booking end date
+        </label>
+
+        <input type="text" id="booking_end_date" name="booking_end_date" placeholder="Booking end date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for bookers_id -->
+      <div class="form-group">
+        <label for="bookers_id" class="control-label">
+          Bookers
+        </label>
+
+        <%= select_tag(:bookers_id, options_from_collection_for_select(UserType.all, :id, :id), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Property Booking
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -105,6 +152,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_property_review" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for property_review -->
+      <div class="form-group">
+        <label for="property_review" class="control-label">
+          Property review
+        </label>
+
+        <input type="text" id="property_review" name="property_review" placeholder="Property review" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for property_id -->
+      <div class="form-group">
+        <label for="property_id" class="control-label">
+          Property
+        </label>
+
+        <%= select_tag(:property_id, options_from_collection_for_select(PropertyInfo.all, :id, :landowner_id), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Property Review
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

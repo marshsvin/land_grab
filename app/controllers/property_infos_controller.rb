@@ -16,6 +16,8 @@ class PropertyInfosController < ApplicationController
   end
 
   def show
+    @property_review = PropertyReview.new
+    @property_booking = PropertyBooking.new
     @property_info = PropertyInfo.find(params[:id])
 
     render("property_infos/show.html.erb")
