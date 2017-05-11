@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Property bookings
+    <a href="/property_bookings/new" class="btn btn-lg btn-success">New Property booking</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Property</th>
+        <th>Booking start date</th>
+        <th>Booking end date</th>
+        <th>Bookers</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @property_bookings.each do |property_booking| %>
+      <tr>
+        <td><%= property_booking.property_id %></td>
+        <td><%= property_booking.booking_start_date %></td>
+        <td><%= property_booking.booking_end_date %></td>
+        <td><%= property_booking.bookers_id %></td>
+        <td>
+          <a href="/property_bookings/<%= property_booking.id %>" class="btn btn-primary">Show</a>
+          <a href="/property_bookings/<%= property_booking.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_property_booking/<%= property_booking.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

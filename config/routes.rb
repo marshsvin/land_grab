@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Property_booking resource:
+  # CREATE
+  get "/property_bookings/new", :controller => "property_bookings", :action => "new"
+  post "/create_property_booking", :controller => "property_bookings", :action => "create"
+
+  # READ
+  get "/property_bookings", :controller => "property_bookings", :action => "index"
+  get "/property_bookings/:id", :controller => "property_bookings", :action => "show"
+
+  # UPDATE
+  get "/property_bookings/:id/edit", :controller => "property_bookings", :action => "edit"
+  post "/update_property_booking/:id", :controller => "property_bookings", :action => "update"
+
+  # DELETE
+  get "/delete_property_booking/:id", :controller => "property_bookings", :action => "destroy"
+  #------------------------------
+
   # Routes for the Property_info resource:
   # CREATE
   get "/property_infos/new", :controller => "property_infos", :action => "new"

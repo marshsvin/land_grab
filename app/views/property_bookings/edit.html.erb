@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @property_booking.errors.any? %>
+  <% @property_booking.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Property Booking #<%= @property_booking.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_property_booking/<%= @property_booking.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for property_id -->
+      <div class="form-group">
+        <label for="property_id" class="control-label">
+          Property
+        </label>
+
+        <input type="text" id="property_id" name="property_id" placeholder="Property" class="form-control" value="<%= @property_booking.property_id %>">
+      </div>
+
+      <!-- Label and input for booking_start_date -->
+      <div class="form-group">
+        <label for="booking_start_date" class="control-label">
+          Booking start date
+        </label>
+
+        <input type="text" id="booking_start_date" name="booking_start_date" placeholder="Booking start date" class="form-control" value="<%= @property_booking.booking_start_date %>">
+      </div>
+
+      <!-- Label and input for booking_end_date -->
+      <div class="form-group">
+        <label for="booking_end_date" class="control-label">
+          Booking end date
+        </label>
+
+        <input type="text" id="booking_end_date" name="booking_end_date" placeholder="Booking end date" class="form-control" value="<%= @property_booking.booking_end_date %>">
+      </div>
+
+      <!-- Label and input for bookers_id -->
+      <div class="form-group">
+        <label for="bookers_id" class="control-label">
+          Bookers
+        </label>
+
+        <input type="text" id="bookers_id" name="bookers_id" placeholder="Bookers" class="form-control" value="<%= @property_booking.bookers_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Property Booking
+      </button>
+      or
+      <a href="/property_bookings/<%= @property_booking.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
