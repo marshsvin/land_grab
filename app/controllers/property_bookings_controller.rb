@@ -1,6 +1,7 @@
 class PropertyBookingsController < ApplicationController
   def index
-    @property_bookings = PropertyBooking.page(params[:page]).per(10)
+    @q = PropertyBooking.ransack(params[:q])
+    @property_bookings = @q.result(:distinct => true).includes(:bookers, :property).page(params[:page]).per(10)
 
     render("property_bookings/index.html.erb")
   end

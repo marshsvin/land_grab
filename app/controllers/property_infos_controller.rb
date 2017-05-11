@@ -10,7 +10,8 @@ class PropertyInfosController < ApplicationController
   end
 
   def index
-    @property_infos = PropertyInfo.page(params[:page]).per(10)
+    @q = PropertyInfo.ransack(params[:q])
+    @property_infos = @q.result(:distinct => true).includes(:landowner, :property_bookings, :reviews).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@property_infos.where.not(:property_address_latitude => nil)) do |property_info, marker|
       marker.lat property_info.property_address_latitude
       marker.lng property_info.property_address_longitude
