@@ -21,7 +21,7 @@
         <td><%= property_booking.property.landowner_id %></td>
         <td><%= property_booking.booking_start_date %></td>
         <td><%= property_booking.booking_end_date %></td>
-        <td><%= property_booking.bookers_id %></td>
+        <td><%= property_booking.bookers.id %></td>
         <td>
           <a href="/property_bookings/<%= property_booking.id %>" class="btn btn-primary">Show</a>
           <a href="/property_bookings/<%= property_booking.id %>/edit" class="btn btn-warning">Edit</a>
