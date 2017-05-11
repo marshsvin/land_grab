@@ -24,7 +24,7 @@
           Landowner
         </label>
 
-        <input type="text" id="landowner_id" name="landowner_id" placeholder="Landowner" class="form-control" value="<%= @property_info.landowner_id %>">
+        <%= select_tag(:landowner_id, options_from_collection_for_select(UserType.all, :id, :id, @property_info.landowner_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for property_address -->
