@@ -18,14 +18,8 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for landowner_id -->
-      <div class="form-group">
-        <label for="landowner_id" class="control-label">
-          Landowner
-        </label>
-
-        <%= select_tag(:landowner_id, options_from_collection_for_select(UserType.all, :id, :id, @property_info.landowner_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for property_address -->
       <div class="form-group">
