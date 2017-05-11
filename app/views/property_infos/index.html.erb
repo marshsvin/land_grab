@@ -22,7 +22,7 @@
 
       <% @property_infos.each do |property_info| %>
       <tr>
-        <td><%= property_info.landowner_id %></td>
+        <td><%= property_info.landowner.id %></td>
         <td><%= property_info.property_address %></td>
         <td><%= property_info.property_zip_code %></td>
         <td><%= property_info.property_city %></td>
