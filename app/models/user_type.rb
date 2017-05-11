@@ -1,6 +1,10 @@
 class UserType < ApplicationRecord
   # Direct associations
 
+  has_many   :property_infos,
+             :foreign_key => "landowner_id",
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations
