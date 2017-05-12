@@ -33,7 +33,7 @@
           Property
         </label>
 
-        <%= select_tag(:property_id, options_from_collection_for_select(PropertyInfo.all, :id, :landowner_id, @property_review.property_id), :class => "form-control") %>
+        <%= select_tag(:property_id, options_from_collection_for_select(Property.all, :id, :landowner_id, @property_review.property_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id -->
