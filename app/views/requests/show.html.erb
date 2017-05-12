@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h3>Request #<%= @request.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Property</dt>
+      <dd>
+        <% if @request.property.present? %>
+          <a href="/properties/<%= @request.property_id %>">
+            <%= @request.property.landowner_id %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>Booking start date</dt>
+      <dd><%= @request.booking_start_date %></dd>
+
+      <dt>Booking end date</dt>
+      <dd><%= @request.booking_end_date %></dd>
+
+      <dt>Requestors</dt>
+      <dd>
+        <% if @request.bookers.present? %>
+          <a href="/users/<%= @request.requestors_id %>">
+            <%= @request.bookers.id %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>Acceptance</dt>
+      <dd><%= @request.acceptance %></dd>
+
+      <dt>User review</dt>
+      <dd><%= @request.user_review %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/requests" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/requests/<%= @request.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_request/<%= @request.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
