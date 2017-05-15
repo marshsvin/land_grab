@@ -11,8 +11,8 @@
       <dt>Property</dt>
       <dd>
         <% if @property_review.property.present? %>
-          <a href="/property_infos/<%= @property_review.property_id %>">
-            <%= @property_review.property.landowner_id %>
+          <a href="/properties/<%= @property_review.property_id %>">
+            <%= @property_review.property.user_id %>
           </a>
         <% end %>
       </dd>
@@ -20,7 +20,7 @@
       <dt>User</dt>
       <dd>
         <% if @property_review.user.present? %>
-          <a href="/user_types/<%= @property_review.user_id %>">
+          <a href="/users/<%= @property_review.user_id %>">
             <%= @property_review.user.id %>
           </a>
         <% end %>

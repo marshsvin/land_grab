@@ -1,7 +1,7 @@
 class PropertyReviewsController < ApplicationController
   before_action :current_user_must_be_property_review_user, :only => [:edit, :update, :destroy]
 
-  def current_user_must_be_property_review_user_type
+  def current_user_must_be_property_review_user
     property_review = PropertyReview.find(params[:id])
 
     unless current_user == property_review.user
