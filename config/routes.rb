@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "property_infos#index"
-  # Routes for the User_review resource:
+  root :to => "properties#index"
+  # Routes for the Picture resource:
   # CREATE
-  get "/user_reviews/new", :controller => "user_reviews", :action => "new"
-  post "/create_user_review", :controller => "user_reviews", :action => "create"
+  get "/pictures/new", :controller => "pictures", :action => "new"
+  post "/create_picture", :controller => "pictures", :action => "create"
 
   # READ
-  get "/user_reviews", :controller => "user_reviews", :action => "index"
-  get "/user_reviews/:id", :controller => "user_reviews", :action => "show"
+  get "/pictures", :controller => "pictures", :action => "index"
+  get "/pictures/:id", :controller => "pictures", :action => "show"
 
   # UPDATE
-  get "/user_reviews/:id/edit", :controller => "user_reviews", :action => "edit"
-  post "/update_user_review/:id", :controller => "user_reviews", :action => "update"
+  get "/pictures/:id/edit", :controller => "pictures", :action => "edit"
+  post "/update_picture/:id", :controller => "pictures", :action => "update"
 
   # DELETE
-  get "/delete_user_review/:id", :controller => "user_reviews", :action => "destroy"
+  get "/delete_picture/:id", :controller => "pictures", :action => "destroy"
   #------------------------------
 
   # Routes for the Property_review resource:
@@ -36,45 +36,45 @@ Rails.application.routes.draw do
   get "/delete_property_review/:id", :controller => "property_reviews", :action => "destroy"
   #------------------------------
 
-  # Routes for the Property_booking resource:
+  # Routes for the Request resource:
   # CREATE
-  get "/property_bookings/new", :controller => "property_bookings", :action => "new"
-  post "/create_property_booking", :controller => "property_bookings", :action => "create"
+  get "/requests/new", :controller => "requests", :action => "new"
+  post "/create_request", :controller => "requests", :action => "create"
 
   # READ
-  get "/property_bookings", :controller => "property_bookings", :action => "index"
-  get "/property_bookings/:id", :controller => "property_bookings", :action => "show"
+  get "/requests", :controller => "requests", :action => "index"
+  get "/requests/:id", :controller => "requests", :action => "show"
 
   # UPDATE
-  get "/property_bookings/:id/edit", :controller => "property_bookings", :action => "edit"
-  post "/update_property_booking/:id", :controller => "property_bookings", :action => "update"
+  get "/requests/:id/edit", :controller => "requests", :action => "edit"
+  post "/update_request/:id", :controller => "requests", :action => "update"
 
   # DELETE
-  get "/delete_property_booking/:id", :controller => "property_bookings", :action => "destroy"
+  get "/delete_request/:id", :controller => "requests", :action => "destroy"
   #------------------------------
 
-  # Routes for the Property_info resource:
+  # Routes for the Property resource:
   # CREATE
-  get "/property_infos/new", :controller => "property_infos", :action => "new"
-  post "/create_property_info", :controller => "property_infos", :action => "create"
+  get "/properties/new", :controller => "properties", :action => "new"
+  post "/create_property", :controller => "properties", :action => "create"
 
   # READ
-  get "/property_infos", :controller => "property_infos", :action => "index"
-  get "/property_infos/:id", :controller => "property_infos", :action => "show"
+  get "/properties", :controller => "properties", :action => "index"
+  get "/properties/:id", :controller => "properties", :action => "show"
 
   # UPDATE
-  get "/property_infos/:id/edit", :controller => "property_infos", :action => "edit"
-  post "/update_property_info/:id", :controller => "property_infos", :action => "update"
+  get "/properties/:id/edit", :controller => "properties", :action => "edit"
+  post "/update_property/:id", :controller => "properties", :action => "update"
 
   # DELETE
-  get "/delete_property_info/:id", :controller => "property_infos", :action => "destroy"
+  get "/delete_property/:id", :controller => "properties", :action => "destroy"
   #------------------------------
 
-  devise_for :user_types
-  # Routes for the User_type resource:
+  devise_for :users
+  # Routes for the User resource:
   # READ
-  get "/user_types", :controller => "user_types", :action => "index"
-  get "/user_types/:id", :controller => "user_types", :action => "show"
+  get "/users", :controller => "users", :action => "index"
+  get "/users/:id", :controller => "users", :action => "show"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
